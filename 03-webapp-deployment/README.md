@@ -61,6 +61,7 @@ kubectl apply -f affinity-tolerations/04-static-web-app-affinity-deployment.yaml
 ```
 
 Taint your nodes with the `NoSchedule` taint and recreate the deployment:
+##### Note: skip the taint commands if you are using GKE Autopilot. You can not directly taint nodes on GKE Autopilot. Instead, you apply tolerations on your workloads and Autopilot automatically provisions nodes with the appropriate taints for the workloads.
 
 ```
 kubectl get nodes
